@@ -21,6 +21,10 @@ public class Empresa {
 		return id;
 	}
 	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
 	
 
 }

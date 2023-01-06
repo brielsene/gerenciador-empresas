@@ -32,7 +32,7 @@ public class Banco {
 //	public void removeEmpresa(Integer id) {
 //		for (Empresa empresa : listaEmpresas) {
 //			if(empresa.getId()==id) {
-//				listaEmpresas.remove(id);
+//				listaEmpresas.remove(empresa);
 //			}
 //			
 //		}
@@ -55,6 +55,15 @@ public class Banco {
 		
 			
 		}
+	
+	public Empresa buscaEmpresaPeloId(Integer id) {
+		for (Empresa empresa : listaEmpresas) {
+			if(empresa.getId() == id) {
+				return empresa;
+			}
+		}
+		return null;
+	}
 		
 		
 	}
