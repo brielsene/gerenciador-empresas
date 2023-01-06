@@ -27,9 +27,10 @@ public class NovaEmpresaServlet extends HttpServlet {
 		
 		
 		request.setAttribute("empresa", empresa.getNome());
+		
+		//sendRedirect - redireciona para última URL,
+		//pra não ficar dando f5 e cadastrando a mesma coisa várias vezes
 		response.sendRedirect("listaEmpresasServlet");
-		
-		
 //		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresasServlet");
 //		request.setAttribute("empresa", empresa.getNome());
 //		rd.forward(request, response);
