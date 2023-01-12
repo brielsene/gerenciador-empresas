@@ -1,4 +1,4 @@
-package br.com.empresas;
+package br.com.modelo;
 
 public class Empresa {
 	private String nome;

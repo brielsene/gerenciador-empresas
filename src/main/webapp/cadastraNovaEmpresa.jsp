@@ -8,9 +8,10 @@
 </head>
 <body>
 
-<form action="/empresas/novaEmpresaServlet" method="post">
+<form action="/empresas/entrada" method="post">
 Nome: <input type="text" name="nome"/>
 <input type="submit"/>
+<input type="hidden" name="acao" value="NovaEmpresa"/>
 
 </form>
 

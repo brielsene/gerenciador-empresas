@@ -1,4 +1,4 @@
-package br.com.empresas;
+package br.com.modelo;
 
 import java.util.ArrayList;
 import java.util.Iterator;
