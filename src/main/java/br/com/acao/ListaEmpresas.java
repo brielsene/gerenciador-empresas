@@ -12,12 +12,15 @@ import br.com.modelo.Banco;
 import br.com.modelo.Empresa;
 
 public class ListaEmpresas {
-	public void executa(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-		System.out.println("listando empresas");
+	public String executa(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
 		Banco banco = new Banco();
 		List<Empresa>lista = banco.getListaEmpresas();
-		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas.jsp");
+		
+		
+		
 		request.setAttribute("lista", lista);
-		rd.forward(request, response);
+		
+		return "forward:listaEmpresas.jsp";
+		
 	}
 }

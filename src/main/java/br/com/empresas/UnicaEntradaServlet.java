@@ -2,6 +2,7 @@ package br.com.empresas;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,15 +30,17 @@ public class UnicaEntradaServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		String paramAcao = request.getParameter("acao");
-
+		
+		String nome = null;
 		if (paramAcao.equals("ListaEmpresas")) {
 			ListaEmpresas acao = new ListaEmpresas();
-			acao.executa(request, response);
+			nome = acao.executa(request, response);
+			
 		}
 
 		else if (paramAcao.equals("RemoveEmpresas")) {
 			RemoveEmpresas acao = new RemoveEmpresas();
-			acao.executa(request, response);
+			nome = acao.executa(request, response);
 
 		} else if (paramAcao.equals("MostraEmpresas")) {
 			MostraEmpresas acao = new MostraEmpresas();
@@ -48,6 +51,14 @@ public class UnicaEntradaServlet extends HttpServlet {
 		} else if (paramAcao.equals("NovaEmpresa")) {
 			NovaEmpresa acao = new NovaEmpresa();
 			acao.executa(request, response);
+		}
+		
+		String[] tipoEEndereco = nome.split(":");
+		if(tipoEEndereco[0].equals("forward")) {
+		RequestDispatcher rd = request.getRequestDispatcher(tipoEEndereco[1]);
+		rd.forward(request, response);
+		}else {
+			response.sendRedirect(tipoEEndereco[1]);
 		}
 
 	}

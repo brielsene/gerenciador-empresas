@@ -10,7 +10,7 @@ import br.com.modelo.Banco;
 
 public class RemoveEmpresas {
 	
-	public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("removendo empresas");
 		String paramId = request.getParameter("id");
 		int id = Integer.parseInt(paramId);
@@ -22,7 +22,7 @@ public class RemoveEmpresas {
 		banco.removeEmpresa(id);
 		
 		//sendRedirect não pode ter barra "/" igual o request.getRequestDisptacher
-		response.sendRedirect("entrada?acao=ListaEmpresas");
+		return "redirect:entrada?acao=ListaEmpresas";
 	}
 
 }
