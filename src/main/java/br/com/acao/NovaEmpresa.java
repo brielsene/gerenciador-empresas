@@ -11,7 +11,7 @@ import br.com.modelo.Empresa;
 
 public class NovaEmpresa {
 	
-	public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Banco banco = new Banco();
 		Empresa empresa = new Empresa(request.getParameter("nome"));
 		banco.adicionaEmpresa(empresa);
@@ -22,7 +22,7 @@ public class NovaEmpresa {
 		
 		//sendRedirect - redireciona para última URL,
 		//pra não ficar dando f5 e cadastrando a mesma coisa várias vezes
-		response.sendRedirect("entrada?acao=ListaEmpresas");
+		return"redirect:entrada?acao=ListaEmpresas";
 	}
 
 }
