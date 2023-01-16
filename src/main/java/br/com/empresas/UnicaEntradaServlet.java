@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.acao.Acao;
 import br.com.acao.AlteraEmpresas;
 import br.com.acao.ListaEmpresas;
 import br.com.acao.MostraEmpresas;
@@ -32,32 +33,17 @@ public class UnicaEntradaServlet extends HttpServlet {
 
 		String paramAcao = request.getParameter("acao");
 		String nomeDaClasse = "br.com.acao."+paramAcao;
-		//paramAcao.executa(req, resp);
 		
-		String nome = null;
-		if (paramAcao.equals("ListaEmpresas")) {
-			ListaEmpresas acao = new ListaEmpresas();
+		String nome;
+		try {
+			Class classe = Class.forName(nomeDaClasse);//carrega a classe com o nome da String
+			Acao acao = (Acao)classe.newInstance();
 			nome = acao.executa(request, response);
-			
+		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | ServletException
+				| IOException e) {
+				throw new ServletException(e);
 		}
-
-		else if (paramAcao.equals("RemoveEmpresas")) {
-			RemoveEmpresas acao = new RemoveEmpresas();
-			nome = acao.executa(request, response);
-
-		} else if (paramAcao.equals("MostraEmpresas")) {
-			MostraEmpresas acao = new MostraEmpresas();
-			nome = acao.executa(request, response);
-		} else if (paramAcao.equals("AlteraEmpresas")) {
-			AlteraEmpresas acao = new AlteraEmpresas();
-			nome = acao.executa(request, response);
-		} else if (paramAcao.equals("NovaEmpresa")) {
-			NovaEmpresa acao = new NovaEmpresa();
-			nome = acao.executa(request, response);
-		}else if(paramAcao.equals("NovaEmpresaForm")) {
-			NovaEmpresaForm novaEmpresaForm = new NovaEmpresaForm();
-			nome = novaEmpresaForm.executa(request, response);
-		}
+		//paramAcao.executa(req, resp);
 		
 		String[] tipoEEndereco = nome.split(":");
 		if(tipoEEndereco[0].equals("forward")) {
@@ -66,6 +52,35 @@ public class UnicaEntradaServlet extends HttpServlet {
 		}else {
 			response.sendRedirect(tipoEEndereco[1]);
 		}
+		
+		
+		
+//		String nome = null;
+//		if (paramAcao.equals("ListaEmpresas")) {
+//			ListaEmpresas acao = new ListaEmpresas();
+//			nome = acao.executa(request, response);
+//			
+//		}
+//
+//		else if (paramAcao.equals("RemoveEmpresas")) {
+//			RemoveEmpresas acao = new RemoveEmpresas();
+//			nome = acao.executa(request, response);
+//
+//		} else if (paramAcao.equals("MostraEmpresas")) {
+//			MostraEmpresas acao = new MostraEmpresas();
+//			nome = acao.executa(request, response);
+//		} else if (paramAcao.equals("AlteraEmpresas")) {
+//			AlteraEmpresas acao = new AlteraEmpresas();
+//			nome = acao.executa(request, response);
+//		} else if (paramAcao.equals("NovaEmpresa")) {
+//			NovaEmpresa acao = new NovaEmpresa();
+//			nome = acao.executa(request, response);
+//		}else if(paramAcao.equals("NovaEmpresaForm")) {
+//			NovaEmpresaForm novaEmpresaForm = new NovaEmpresaForm();
+//			nome = novaEmpresaForm.executa(request, response);
+//		}
+		
+		
 
 	}
 
