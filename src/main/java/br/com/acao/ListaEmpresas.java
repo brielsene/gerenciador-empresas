@@ -14,10 +14,7 @@ import br.com.modelo.Empresa;
 
 public class ListaEmpresas implements Acao {
 	public String executa(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-		HttpSession sessao = request.getSession();
-		if(sessao.getAttribute("usuarioLogado")==null) {
-			return "redirect:entrada?acao=LoginForm";
-		}
+		
 		
 		
 		Banco banco = new Banco();
