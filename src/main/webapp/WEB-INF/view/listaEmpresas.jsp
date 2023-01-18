@@ -9,6 +9,11 @@
 </head>
 <body>
 
+Usuario Logado: ${usuarioLogado.login }
+<br>
+<br>
+<br>
+
 <c:if test="${not empty empresa }">
 	Empresa: ${empresa } cadastrada com sucesso!
 </c:if>
