@@ -1,0 +1,65 @@
+[33mcommit 17008021b5ef97d4e4981229046b5a0ca6540642[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Gabriel Sene <sene300@gmail.com>
+Date:   Thu Jan 19 12:26:58 2023 -0300
+
+    feat: Filter de autorização e contagem de tempo em milisegundos
+
+[33mcommit 1ba5be0013f2981c7f800344b99c091794bc879f[m
+Author: Gabriel Sene <sene300@gmail.com>
+Date:   Wed Jan 18 12:44:17 2023 -0300
+
+    feat: Implementando logout
+
+[33mcommit 1c22688672019dbb3a7e293ae9c2ac216d4db563[m
+Author: Gabriel Sene <sene300@gmail.com>
+Date:   Wed Jan 18 12:23:41 2023 -0300
+
+    feat: HttpSession e condições de verificações para chamadas de classes
+
+[33mcommit 9aabef0ffe5226f0bb1f737999d6b8a67f911ab6[m
+Author: Gabriel Sene <sene300@gmail.com>
+Date:   Tue Jan 17 14:49:05 2023 -0300
+
+    feat: Formulário de autenticação
+
+[33mcommit e7053b5791daa74e2b3954460d560a13304d9408[m
+Author: Gabriel Sene <sene300@gmail.com>
+Date:   Mon Jan 16 12:19:06 2023 -0300
+
+    feat: Melhorando o controlador com uma Interface Acao, e classe Class
+
+[33mcommit db8ab1a2d9b32fabbb53db76fe9391e232c1d83d[m
+Author: Gabriel Sene <sene300@gmail.com>
+Date:   Mon Jan 16 12:04:30 2023 -0300
+
+    feat: nova pasta view, e escondendo os JSP's
+
+[33mcommit 7b91f6ad1b8d3b10a8cac2bb08c0c26dc9b90ae4[m
+Author: Gabriel Sene <sene300@gmail.com>
+Date:   Mon Jan 16 11:11:55 2023 -0300
+
+    feat: Centralizando o redirecionamento
+
+[33mcommit aff068ce27d8017bbb29aba6579e20d8ccdcd41b[m
+Author: Gabriel Sene <sene300@gmail.com>
+Date:   Thu Jan 12 19:05:21 2023 -0300
+
+    feat: Criando controlador, e desfazendo vários Servlets
+
+[33mcommit d6c8dbaf9ec107bb8f730c0d1dabf00b5bf65308[m
+Author: Gabriel Sene <sene300@gmail.com>
+Date:   Fri Jan 6 19:05:07 2023 -0300
+
+    feat: adicionando Alteração(Update) no nosso CRUD
+
+[33mcommit 085ec54c59a3a920f92d5a072f7edd0e8a17b26a[m
+Author: Gabriel Sene <sene300@gmail.com>
+Date:   Fri Jan 6 12:18:34 2023 -0300
+
+    feat: CRUD - Deletando Empresas pelo ID
+
+[33mcommit a5713efa8e94553f0bf110115b868cf43e51bb33[m
+Author: Gabriel Sene <sene300@gmail.com>
+Date:   Thu Jan 5 18:31:13 2023 -0300
+
+    feat: Servlets chamando Servlets, e Redirects
