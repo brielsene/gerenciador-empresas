@@ -33,19 +33,19 @@ public class UnicaEntradaServlet extends HttpServlet {
 			throws ServletException, IOException {
 		
 		String paramAcao = request.getParameter("acao");
-		
-		HttpSession sessao = request.getSession();
-		boolean usuarioNaoEstaLogado = sessao.getAttribute("usuarioLogado")==null;
-		boolean ehUmaAcaoProtegida = !(paramAcao.equals("Login") || paramAcao.equals("LoginForm"));
-		
-		if(ehUmaAcaoProtegida && usuarioNaoEstaLogado) {
-			response.sendRedirect("entrada?acao=LoginForm");
-			//esse return serve apenas para sair da execução,
-			//para que não continue executando o código abaixo, já que 
-			//temos uma condição, e o código de baixo, é apenas para
-			//se usuario já estiver logado, que a condição contraria deste if
-			return;
-		}
+//		
+//		HttpSession sessao = request.getSession();
+//		boolean usuarioNaoEstaLogado = sessao.getAttribute("usuarioLogado")==null;
+//		boolean ehUmaAcaoProtegida = !(paramAcao.equals("Login") || paramAcao.equals("LoginForm"));
+//		
+//		if(ehUmaAcaoProtegida && usuarioNaoEstaLogado) {
+//			response.sendRedirect("entrada?acao=LoginForm");
+//			//esse return serve apenas para sair da execução,
+//			//para que não continue executando o código abaixo, já que 
+//			//temos uma condição, e o código de baixo, é apenas para
+//			//se usuario já estiver logado, que a condição contraria deste if
+//			return;
+//		}
 		
 		
 		
